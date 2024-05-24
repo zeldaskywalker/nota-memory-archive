@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Title Banner and Buttons -->
+
+<div id="landing-main-div">
+    <div id="landing-h1-div">
+        <h1 id="landing-h1">
+            The 2023 - 2024<br />
+            Google NYC<br />
+            Digital Memory<br />
+            Archive
+        </h1>
+    </div>
+    <div class="landing-bottom-container">
+        <div id="landing-buttons-container">
+            <div>
+                <a href="/timeline">
+                    <button>
+                        check out the timeline</button></a>
+            </div>
+            <div>
+                <a href="/archive">
+                    <button>
+                        peruse the archive</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cream container - "Cultural Expression through Agency" -->
+
+<div id="landing-about-container">
+    <div class="landing-child-div">
+        <img src="{% static '/images/police_brutality.jpeg' %}" width=400px>
+        <P class="home-image-caption">
+            A picture of Zelda being arrested by NYPDs Strategic
+            Response Group during the Met Gala protest on May 7th, 2024.
+            Photography credit to
+            <a href="https://www.instagram.com/oshimages/">@oshimages on Instagram.</a></P>
+    </div>
+    <div class="landing-child-div">
+        <div class="q" id="landing-about-header">
+            Tech Workers Organize
+        </div>
+        <br>
+        <div id="landing-about-text">
+            How have Google workers engaged in labor organizing through
+            <a href="https://www.notechforapartheid.com">No Tech For Apartheid</a>
+            (NOTA) in 2023 - 2024? What are some of their experiences as they build worker power
+            to oppose Project Nimbus? Seeking to combat the silencing around the nature of labor
+            organizing by Google (GOOG), this project will feature an annotated historical timeline
+            of NOTA+GOOG NYC events, as well as an archive of press interviews, personal journal
+            entries, art, zines/flyers, newspapers, stickers, images, and legal documents.
+        </div>
+        <br>
+        <div>
+            <a href="/about"><button>read more about the project</button></a>
+        </div>
+    </div>
+</div>
+
+<!-- EXPLORE Section -->
+<div id="landing-explore-container">
+    <hr>
+    <h1>EXPLORE</h1>
+    <hr>
+    <div class="row justify-content-around">
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="https://baserow.nota.im/media/user_files/aI16tkoX4Cpx9K4T1eylWYjbkY08IJe9_8a966350a69d9a451d487162246503641f40a52ebae81437223011a5f6b26ffa.jpeg" alt="NOTA at Manhattan protest on March 2nd, 2024">
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">NOTA at Manhattan protest on March 2nd, 2024</h2></div>
+                    <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
+                    <div>
+                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Type: <i>picture</i></h4>
+                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Date: <i>2024-03-02</i></h4>
+                    </div>
+                    <a href="/archive/63"><button id="press">learn more &nearr;</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">Google worker fired for pro-Palestinian protest: “Workers are the ones that have the power to stop the genocide”</h2></div>
+                    <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
+                    <div>
+                      <h4 style="font-size:15px; letter-spacing: 0.13px;">Outlet: <i><u>World Socialist Website</u></i></h4>
+                      <h4 style="font-size:15px; letter-spacing: 0.13px;">Published on: <i>2024-04-19</i></h4>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                      <a href="https://www.wsws.org/en/articles/2024/04/20/joyb-a20.html"><button id="press">explore here &nearr;</button></a>
+                      <a href="https://archive.is/Ztzys"><button id="press">archive link &nearr;</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="https://baserow.nota.im/media/user_files/y1dONuPYBZ8J4sNz6RQxcTaj6cyQtIg8_071e00f98edad750013a5ec0d8c75356b49d5d86545d4de6fd17431204e7c098.jpeg" alt="Charges dropped!">
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">Charges dropped!</h2></div>
+                    <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
+                    <div>
+                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Type: <i>picture</i></h4>
+                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Date: <i>2024-05-02</i></h4>
+                    </div>
+                    <a href="/archive/73"><button id="press">learn more &nearr;</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

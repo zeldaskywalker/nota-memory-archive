@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+      .mapboxgl-popup-content {
+        width: 450px;
+      }
+    </style>
+</head>
+<div id="archive-record-page-container">
+    <div>
+        <h2>ARCHIVAL MATERIAL</h2>
+    </div>
+
+
+    <div class="archive-row">
+        <div class="archive-column" style="padding-right: 40px;">
+            <h1 style="font-family: grotesk">{{ Title }}</h1>
+            <div style="font-size: 20px;">
+                <u>Type:</u><br>
+                <i>{{Type.value}}</i>
+            </div>
+            <br>
+            <div style="font-size: 20px;">
+                <u>Date:</u><br>
+                <i>{{Date}}</i>
+            </div>
+            <br>
+            <div style="font-size: 20px;">
+                <u>Description:</u><br>
+                <i>{{Description}}</i>
+            </div>
+        </div>
+        <div class="archive-column" style="border-left: 1px solid var(--purple)">
+            {% for file in File %}
+            <div>
+                <img onclick="openOrCloseImage('open', '{{file.name}}');" id="{{file.name}}" style="width: 70%; margin-left: auto; margin-right: auto; display: block" src="{{file.url}}" alt="{{Title}}">
+                <!-- The Modal -->
+                <div id="my{{file.name}}Modal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close" onclick="openOrCloseImage('close', '{{file.name}}')">&times;</span>
+                
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="{{file.name|cut:'.'}}modal">
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    // Get the modal
+
+    function openOrCloseImage(openOrClose, name) {
+        var image_id = name;
+        var span = document.getElementsByClassName("close")[0];
+        var modal = document.getElementById("my" + image_id + "Modal");
+
+        var modal_image_id = image_id.replaceAll(".", "");
+
+        if (openOrClose === 'open') {
+            // Get the image and insert it inside the modal
+            var img = document.getElementById(image_id);
+            var modalImg = document.getElementById(modal_image_id + "modal");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+        else if(openOrClose === 'close') {
+            modal.style.display = "none";
+        }
+    }
+</script>
+{% endblock content %}

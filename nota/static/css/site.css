@@ -1,0 +1,807 @@
+:root {
+    --main-bg-color: #FFFFF6;
+    --black: #000000;
+    --document-gray: #5C5B5B;
+    --text: #363636;
+    --purple: #867EC9;
+    --green-yellow: #96fa32;
+    --indigenous-rights-red: #BB604D;
+}
+
+@font-face {
+    font-family: grotesk;
+    src: url(fonts/LAB-Grotesk.otf);
+}
+
+@font-face {
+    font-family: authentic;
+    src: url(fonts/AUTHENTICSans-60.otf);
+}
+
+ul {
+    font-size: 15px;
+    font-family: grotesk;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    align-self: end;
+  
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  padding-bottom:2px;
+  text-decoration: none;
+}
+
+li a:hover {
+    background-color: var(--green-yellow);
+    color: var(--black);
+}
+
+hr {
+    border-top: 1px solid var(--document-gray);
+    opacity: 1;
+}
+
+#about-hr {
+    border-top: 2px solid var(--green-yellow);
+    opacity: 1;
+}
+
+.glossary-hr {
+    border-top: 2px solid var(--green-yellow);
+}
+
+.glossary-acc-hr {
+    border-top: 2px solid var(--green-yellow);
+    opacity: .33;
+}
+
+html,
+body {
+    background-color: var(--main-bg-color);
+    margin: 0;
+    height: 100%;
+    opacity: 1;
+    color: var(--text);
+    font-family: authentic;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.18px;
+    text-align: left;
+    max-width: 1160px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+}
+
+
+
+title {
+    opacity: 1;
+    color: var(--black);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.44px;
+    text-align: left;
+}
+
+h1 {
+    opacity: 1;
+    color: var(--black);
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 0.37px;
+    text-align: left;
+}
+
+#landing-main-div {
+    /*UPDATE IMAGE URL*/
+    background-color: var(--green-yellow);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+#landing-h1-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#landing-h1 {
+    font-family: grotesk;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+    color: var(--black);
+    font-size: 50px;
+    padding-top: 0.5em;
+}
+
+h2 {
+    opacity: 1;
+    color: var(--purple);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.28px;
+    text-align: left;
+}
+
+h3 {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin-top: 1px;
+}
+
+h4 {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.13px;
+    text-align: left;
+    margin-top: -1px;
+}
+
+b {
+    font-weight: 700;
+}
+
+.q {
+    opacity: 1;
+    color: var(--green-yellow);
+    font-size: 34px;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.38px;
+    text-align: left;
+}
+
+.s1 {
+    opacity: 1;
+    color: var(--purple);
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
+
+
+.s2 {
+    opacity: 1;
+    color: var(--green-yellow);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.22px;
+    text-align: left;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: var(--black);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.tcontainer {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.tcontainer::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--black);
+    border: 4px solid var(--purple);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -13px;
+}
+
+/* Fix the circle for containers on the right side */
+.left::after {
+    right: -13px;
+}
+
+
+/* The actual content */
+.tcontent {
+    padding: 20px 30px;
+    background-color: var(--black);
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid black;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent black;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--black);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--black) transparent transparent;
+}
+
+.caption {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14px;
+    text-align: left;
+}
+
+.home-image-caption {
+    font-size: 12px;
+    color: var(--text);
+    letter-spacing: 0.13px;
+    width: 400px;
+}
+
+#about-caption {
+    color: var(--black);
+    font-size: 21px;
+    letter-spacing: 0.23px;
+    text-align: left;
+}
+
+#about-divider {
+    color: var(--green-yellow);
+    font-size: 21px;
+}
+
+button {
+    border-radius: 5px;
+    border: 0px solid #979797;
+    opacity: 1;
+    background-color: var(--document-gray);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16px;
+    text-align: left;
+    padding: 4px 8px;
+}
+
+#landing-page-button {
+    background-color: var(--purple);
+    padding: 1em;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.spot-button-container {
+    padding-top: 15px;
+}
+
+#landing-bottom-container {
+    width: auto;
+    align-items: center;
+}
+
+#landing-buttons-container {
+    height: 10%;
+    width: 50%;
+    color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#landing-about-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    padding-bottom: 0px;
+}
+
+.page-container {
+    padding: 50px;
+}
+
+#about-page-container {
+    padding: 50px;
+    list-style-type: circle;
+}
+
+
+#archive-record-page-container {
+    padding: 50px;
+}
+
+
+#timeline-page-container {
+    padding: 50px;
+}
+
+
+#landing-about-text {
+    color: var(--text);
+}
+
+#landing-about-text a {
+    text-decoration-color: var(--purple) !important
+}
+
+#landing-about-header {
+    font-weight: 600;
+    color: var(--purple);
+    font-style: normal;
+}
+
+.landing-child-div {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#landing-explore-container {
+    height: auto;
+    padding: 50px;
+    padding-top: 10px;
+}
+
+#landing-explore-text {
+    color: #1A1A1A;
+    font-weight: 700;
+}
+
+#landing-example-explore {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
+}
+
+.header-footer-container {
+    background-color: var(--black);
+    top: 0;
+    color: var(--main-bg-color);
+    align-items: middle;
+}
+
+.header-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* gap: 30px; */
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.17px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: middle;
+}
+
+.works-cited {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.citations {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.15px;
+}
+
+.nav {
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.17px;
+    text-align: left ;
+    align-items: middle;
+}
+
+#nav-links-container {
+    display: grid;
+    text-align: center ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    min-width: 375px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.nav-links {
+    border-right: 1px solid var(--green-yellow);
+    padding-right: 1px;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 90px;
+    bottom: 0;
+}
+
+.no-border {
+    border-right:0px;
+}
+
+#logo_container {
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.footer-container {
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+    line-height: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-info {
+    opacity: 1;
+    margin: 30px;
+}
+
+.footer-info-description {
+    margin-top: 5px;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.footer-info-links {
+    border-left: 1px solid var(--green-yellow);
+    padding-left: 8px;
+    opacity: 1;
+    margin: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+}
+
+.footer-info-links a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--purple) !important;
+}
+
+.footer-info-links a:hover {
+    background-color: var(--green-yellow);
+    color: var(--black);
+}
+
+a {
+    color: inherit;
+}
+
+/* a:link {
+    text-decoration: none;
+} */
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+/* Paragraph link styles */
+
+p>a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--purple) !important;
+}
+
+li>a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--purple) !important;
+}
+
+/* p a:hover {
+    color: var(--black) !important;
+}
+
+li a:hover {
+    color: var(--black) !important;
+} */
+
+/* About page bio divs */
+
+.about-pic {
+    flex: 1;
+    padding-right: 10px;
+    max-width: 300px;
+}
+
+.about-bio-text {
+    flex: 3;
+}
+
+.about-pic img {
+    max-width: 100%;
+    height: auto;
+}
+
+.archive-row {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.archive_column {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.archive-column u {
+    text-decoration: underline var(--green-yellow);
+}
+
+#press {
+    font-family: grotesk;
+    font-size: 10px;
+}
+
+#press:hover{
+    background-color: var(--green-yellow);
+    color: var(--black);
+}
+
+.about-bio {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#issues-header-container {
+    padding: 50px 50px 50px 50px;
+}
+
+/* Accordion Styles for Glossary Page*/
+
+.accordion {}
+
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--black);
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 40px;  
+    background-image: url('https://i.imgur.com/CizzedP.png');
+ 
+}
+
+.accordion .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion input[type="checkbox"]:checked ~ .content {
+    max-height: 1000px;
+    transition: max-height 0.4s ease-in;
+}
+
+
+.indigenous-rights {
+    color: var(--indigenous-rights-red);
+}
+
+.racial-equality {
+    color: var(--racial-equality-green);
+}
+
+.antislavery {
+    color: var(--green-yellow);
+}
+
+.temperance {
+    color: var(--temperance-blue);
+}
+
+.womens-rights {
+    color: var(--purple);
+}
+
+#thanks {
+    list-style-type: disc;
+    float: left;
+}
+
+.light-text {
+    color: var(--main-bg-color);
+}
+
+.dark-text {
+    color: var(--text);
+}
+
+#indigenous-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--indigenous-rights-red);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#anti-slavery-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--green-yellow);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#womens-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--purple);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#temperance-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--temperance-blue);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#racial-equality-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--racial-equality-green);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#issue-key {
+    display: flex;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    padding-bottom: 10px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+  
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: 95vh;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+#WJMn5VKB7c2jd9K5ZV3vR3NaF0Q3dKkI_f65c9c0d035667537079c95e7ab0b7f48325873a313efcd4f068a2ecbe31e259jpegmodal {
+    width: 100vh !important; 
+    height: auto !important;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#archive-record-page-container img {
+    cursor: pointer;
+    transition: 0.3s;
+}

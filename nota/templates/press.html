@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container">
+    <h2>PRESS</h2>
+    <div style="width: 400px;">
+        <h1>NOTA + GOOG NYC</h1>
+    </div>
+    <div class="caption" style="font-size:21px; letter-spacing: 0.23px; font-weight: 700;">
+        2023 - 2024
+    </div>
+    <hr style="border-top: 2px solid #5C5B5B;">
+    <div class="row justify-content-around">
+    {% for d in data %}
+        <div class="col-md-3" style="width: 30%"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{d.Headline}}</h2></div>
+                    <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
+                    <div>
+                      <h4 style="font-size:15px; letter-spacing: 0.13px;">Outlet: <i><u>{{d.Outlet}}</u></i></h4>
+                      <h4 style="font-size:15px; letter-spacing: 0.13px;">Published on: <i>{{d.Date}}</i></h4>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                      <a href="{{d.Link}}"><button id="press">explore here &nearr;</button></a>
+                      {% if d.ArchiveUrl %}<a href="{{d.ArchiveUrl}}"><button id="press">archive link &nearr;</button></a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row justify-content-around">{% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
