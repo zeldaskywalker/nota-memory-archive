@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("APP_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,notechforapartheidmemory.com").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,hammerhead-app-3qt2h.ondigitalocean.app,notechforapartheidmemory.com").split(",")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
