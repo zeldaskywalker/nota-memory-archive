@@ -33,6 +33,7 @@ SECRET_KEY = os.getenv("APP_SECRET_KEY")
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,nota-memory-app-6pu69.ondigitalocean.app,notechforapartheidmemory.com").split(",")
 
 INSTALLED_APPS = [
+    'nota.apps.NotaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        "DIRS": [BASE_DIR / "nota/templates"],
+        "DIRS": [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,10 +107,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "/static/"
-
 # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATIC_URL = "/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
