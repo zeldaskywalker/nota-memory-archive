@@ -8,6 +8,10 @@
     --indigenous-rights-red: #BB604D;
 }
 
+video {
+    width: 100%;
+}
+
 @font-face {
     font-family: grotesk;
     src: url(fonts/LAB-Grotesk.otf);
@@ -615,6 +619,25 @@ li a:hover {
     color: var(--black);
 }
 
+#interviews_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 20px;
+}
+
+.interview_div {
+    width: 45%
+}
+
+.interview_div:hover a {
+    color: var(--purple);
+}
+
+.interview_div:hover h3 {
+    color: var(--purple);
+}
+
 .about-bio {
     display: flex;
     margin-bottom: 20px;
@@ -804,4 +827,8 @@ li a:hover {
 #archive-record-page-container img {
     cursor: pointer;
     transition: 0.3s;
+}
+
+.video_thumbnail_img {
+    width: 100%;
 }

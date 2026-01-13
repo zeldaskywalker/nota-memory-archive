@@ -4,9 +4,13 @@ from django.shortcuts import render
 from django.views import generic
 
 from . import baserow
+from . import do_spaces
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
+
+class OralHistoryInterviews(generic.TemplateView):
+    template_name = 'interviews.html'
 
 class TimelineView(generic.TemplateView):
     template_name = 'timeline.html'
@@ -45,3 +49,11 @@ class ArchiveMaterialView(generic.TemplateView):
         context = super(ArchiveMaterialView, self).get_context_data(**kwargs)
         context['data'] = baserow.get_archival_material(context['row_id'])
         return context['data']
+
+class SingleOralHistoryInterview(generic.TemplateView):
+    template_name = 'interview.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SingleOralHistoryInterview, self).get_context_data(**kwargs)
+        context['video_link'] = do_spaces.get_presigned_url(context['name'])
+        return context
