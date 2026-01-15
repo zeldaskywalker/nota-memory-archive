@@ -17,7 +17,7 @@ client = session.client('s3',
                         aws_secret_access_key=SPACE_SECRET_KEY)
 
 # Relevant documentation:
-# https://docs.digitalocean.com/products/spaces/how-to/set-file-permissions/
+# https://docs.digitalocean.com/products/spaces/how-to/set-file-permissions/#presigned-url
 def get_presigned_url(name):
     presigned_url = client.generate_presigned_url(
         ClientMethod='get_object',
