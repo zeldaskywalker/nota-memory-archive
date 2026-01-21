@@ -17,7 +17,13 @@ class TimelineView(generic.TemplateView):
 
 class ArchiveView(generic.ListView):
     template_name = 'archive.html'
-    data = baserow.get_archive_all()
+
+    data = None
+
+    try:
+        data = baserow.get_archive_all()
+    except:
+        print('Baserow issue.')
 
     def get_context_data(self, **kwargs):
         context = super(ArchiveView, self).get_context_data(**kwargs)
@@ -29,7 +35,13 @@ class ArchiveView(generic.ListView):
 
 class PressView(generic.ListView):
     template_name = 'press.html'
-    data = baserow.get_press_all()
+
+    data = None
+
+    try:
+        data = baserow.get_press_all()
+    except:
+        print('Baserow issue.')
 
     def get_context_data(self, **kwargs):
         context = super(PressView, self).get_context_data(**kwargs)
@@ -47,7 +59,10 @@ class ArchiveMaterialView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ArchiveMaterialView, self).get_context_data(**kwargs)
-        context['data'] = baserow.get_archival_material(context['row_id'])
+        try:
+            context['data'] = baserow.get_archival_material(context['row_id'])
+        except:
+            print('Baserow issue.')
         return context['data']
 
 class SingleOralHistoryInterview(generic.TemplateView):

@@ -10,24 +10,28 @@
         2023 - 2024
     </div>
     <hr style="border-top: 2px solid #5C5B5B;">
-    <div class="row justify-content-around">
-    {% for d in data %}
-        <div class="col-md-3" style="width: 29%"><!-- HERE -->
-            <div class="card mb-4 shadow-sm"><!-- HERE -->
-                <img class="card-img-top" src="{% with d.File|first as first_file %}{{ first_file.url }}{% endwith %}" alt="{{d.Title}}">
-                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
-                    <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{d.Title}}</h2></div>
-                    <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
-                    <div>
-                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Type: <i>{{d.Type.value}}</i></h4>
-                        <h4 style="font-size:15px; letter-spacing: 0.13px;">Date: <i>{{d.Date}}</i></h4>
+    {% if data %}
+        <div class="row justify-content-around">
+        {% for d in data %}
+            <div class="col-md-3" style="width: 29%"><!-- HERE -->
+                <div class="card mb-4 shadow-sm"><!-- HERE -->
+                    <img class="card-img-top" src="{% with d.File|first as first_file %}{{ first_file.url }}{% endwith %}" alt="{{d.Title}}">
+                    <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                        <div><h2 style="font-size:18px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{d.Title}}</h2></div>
+                        <hr style="border-top: 1px solid #96fa32; margin-top: 0;">
+                        <div>
+                            <h4 style="font-size:15px; letter-spacing: 0.13px;">Type: <i>{{d.Type.value}}</i></h4>
+                            <h4 style="font-size:15px; letter-spacing: 0.13px;">Date: <i>{{d.Date}}</i></h4>
+                        </div>
+                        <a href="/archive/{{d.id}}"><button id="press">learn more &nearr;</button></a>
                     </div>
-                    <a href="/archive/{{d.id}}"><button id="press">learn more &nearr;</button></a>
                 </div>
             </div>
+            {% if forloop.counter|divisibleby:3 %}</div><div class="row justify-content-around">{% endif %}
+        {% endfor %}
         </div>
-        {% if forloop.counter|divisibleby:3 %}</div><div class="row justify-content-around">{% endif %}
-    {% endfor %}
-    </div>
+    {% else %}
+        <p>Please check back later, there are currently issues with accessing the archival materials.</p>
+    {% endif %}
 </div>
 {% endblock content %}
