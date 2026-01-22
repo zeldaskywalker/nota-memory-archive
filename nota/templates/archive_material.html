@@ -36,7 +36,7 @@
                     <span class="close" onclick="openOrCloseImage('close', '{{file.name}}')">&times;</span>
                 
                     <!-- Modal Content (The Image) -->
-                    <img class="modal-content" id="{{file.name|cut:'.'}}modal">
+                    <img class="modal-content" id="{{file.name|cut:'.'}}modal" onclick="openOrCloseImage('close', '{{file.name}}')">
                 </div>
             </div>
             <br>

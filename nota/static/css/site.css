@@ -581,13 +581,16 @@ li a:hover {
 /* About page bio divs */
 
 .about-pic {
-    flex: 1;
-    padding-right: 10px;
-    max-width: 300px;
+    float: left;
+    /* flex: 1; */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    max-width: 250px;
+    /* max-width: 300px; */
 }
 
-.about-bio-text {
-    flex: 3;
+.archive-column img:hover {
+    cursor: zoom-in;
 }
 
 .about-pic img {
@@ -639,7 +642,6 @@ li a:hover {
 }
 
 .about-bio {
-    display: flex;
     margin-bottom: 20px;
 }
 
@@ -784,6 +786,7 @@ li a:hover {
   
 /* Modal Content (Image) */
 .modal-content {
+    cursor: zoom-out !important;
     margin: auto;
     display: block;
     width: auto;
