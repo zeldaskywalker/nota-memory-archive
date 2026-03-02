@@ -31,7 +31,10 @@ class ArchiveView(generic.ListView):
         return context
 
     def get_queryset(self, **kwargs):
-        return self.data
+        try:
+            return self.data
+        except:
+            print('Check Baserow!')
 
 class PressView(generic.ListView):
     template_name = 'press.html'
@@ -49,7 +52,10 @@ class PressView(generic.ListView):
         return context
 
     def get_queryset(self, **kwargs):
-        return self.data
+        try:
+            return self.data
+        except:
+            print('Check Baserow!')
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
