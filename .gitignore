@@ -3,3 +3,8 @@ __pycache__/
 staticfiles
 .*
 *.pyc
+/mysite/__pycache__
+/nota/__pycache__
+/nota/__pycache__
+*.pyc
+nota/__pycache__/views.cpython-312.pyc
